@@ -16,3 +16,7 @@ gem "launchy", ">= 2.0.5", :group => :test
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.2.3"
 gem "devise", ">= 1.4.9"
+
+group :production do
+  gem 'thin'
+end
