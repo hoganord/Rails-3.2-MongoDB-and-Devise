@@ -1,0 +1,26 @@
+<script src="/enquiry_form/javascript/form_validation_chcc_subscribe.js" type="text/javascript"></script>
+
+   <form id="testform" class="niceform" name="brochurerequest" onsubmit="return validate_form(this)" action="https://www.meeting.co.uk/confercare/FormProcess/formParse.aspx" method="post">
+<input name="required" value="first_name,last_name,email" type="hidden" />
+    <input type="hidden" value="Mailchimp Subscription Chancellors Hotel" name="subject" />
+    <input type="hidden" value="catherine.burke@manchester.ac.uk" name="recipient" />
+    <input type="hidden" value="http://www.conference.manchester.ac.uk/thank-you-for-subscribing" name="redirect" />
+    <fieldset>
+     <legend>&nbsp;</legend>
+     <dl>
+      <dt><label for="first name">First Name<span class="requ">*</span></label></dt>
+      <dd><input type="text" name="first_name" id="first_name" size="32" maxlength="128" /></dd>
+     </dl>
+     <dl>
+      <dt><label for="last name">Last Name<span class="requ">*</span></label></dt>
+      <dd><input type="text" name="last_name" id="last_name" size="32" maxlength="128" /></dd>
+     </dl>
+     <dl>
+      <dt><label for="email">Email<span class="requ">*</span></label></dt>
+      <dd><input id="email" name="email" size="32" maxlength="128" /></dd>
+     </dl>
+     </fieldset 
+    <fieldset class="action">
+     <input class="button" type="submit" name="submit" id="submit" value="Submit&nbsp;&raquo;" />
+    </fieldset>
+   </form>
