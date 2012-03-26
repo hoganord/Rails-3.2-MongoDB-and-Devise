@@ -20,13 +20,21 @@ Rails3MongodbDevise::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
   
-  config.action_mailer.default_url_options = { :host => 'yourhost.com' }
-  # ActionMailer Config
-  # Setup for production - deliveries, no errors raised
+  # Use Gmail for sending test emails for sign-up process
+  config.action_mailer.default_url_options = { :host => 'blooming-mountain-2944.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "blooming-mountain-2944.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
   
 
   # Defaults to Rails.root.join("public/assets")
@@ -69,21 +77,5 @@ Rails3MongodbDevise::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
-  # Use Gmail for sending test emails for sign-up process
-  config.action_mailer.default_url_options = { :host => 'blooming-mountain-2944.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "blooming-mountain-2944.herokuapp.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-  }
 
 end
